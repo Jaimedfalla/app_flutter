@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'rating.dart';
 
-class Review extends StatelessWidget{
+class Review extends Rating{
 
-  String _path = "assets/images/people.jpg";
-  String _name ="Jaime Falla";
-  String _details = "1 review 5 photos";
-  String _comment = "There is an amazing place in Sri Lanka";
+  String _path;
+  String _name;
+  String _details;
+  String _comment;
 
   Review(this._path,
   this._name,
   this._details,
   this._comment,
-  {super.key});
+  _stars):super(_stars);
 
   @override 
   Widget build(BuildContext context) {
@@ -34,13 +35,20 @@ class Review extends StatelessWidget{
       margin: const EdgeInsets.only(
         left: 20.0
       ),
-      child: Text(_details,
-        textAlign: TextAlign.left,
-        style: const TextStyle(
-          fontFamily: "Nerko",
-          fontSize: 13.0,
-          color: Color(0xFFa3a5a7)
-        ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(_details,
+            textAlign: TextAlign.left,
+            style: const TextStyle(
+              fontFamily: "Nerko",
+              fontSize: 13.0,
+              color: Color(0xFFa3a5a7)
+            ),
+          ),
+          //...createStars(),
+        ],
       ),
     );
 
@@ -83,12 +91,10 @@ class Review extends StatelessWidget{
     );
 
     return Row(
-      children: [
-        photo,
-        userDetails
-      ],
-    );
+        children: [
+          photo,
+          userDetails
+        ],
+      );
   }
-
-  
 }
