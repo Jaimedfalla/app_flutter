@@ -1,18 +1,20 @@
+import 'package:app_flutter/components/photo.dart';
 import 'package:flutter/material.dart';
 import 'rating.dart';
 
+
 class Review extends Rating{
 
-  String _path;
-  String _name;
-  String _details;
-  String _comment;
+  final String path;
+  final String name;
+  final String details;
+  final String comment;
 
-  Review(this._path,
-  this._name,
-  this._details,
-  this._comment,
-  _stars):super(_stars);
+  Review({super.key, required this.path,
+  required this.name,
+  required this.details,
+  required this.comment,
+  required stars}):super(stars:stars);
 
   @override 
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class Review extends Rating{
       margin: const EdgeInsets.only(
         left: 20.0
       ),
-      child: Text(_comment,
+      child: Text(comment,
         textAlign: TextAlign.left,
         style: const TextStyle(
           fontFamily: "Nerko",
@@ -39,7 +41,7 @@ class Review extends Rating{
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(_details,
+          Text(details,
             textAlign: TextAlign.left,
             style: const TextStyle(
               fontFamily: "Nerko",
@@ -56,7 +58,7 @@ class Review extends Rating{
       margin: const EdgeInsets.only(
         left: 20.0
       ),
-      child: Text(_name,
+      child: Text(name,
         textAlign: TextAlign.left,
         style: const TextStyle(
           fontFamily: "Nerko",
@@ -74,25 +76,9 @@ class Review extends Rating{
       ],
     );
 
-    final photo = Container(
-      margin: const EdgeInsets.only(
-        top:20.0,
-        left: 20.0
-      ),
-      width: 80,
-      height: 80,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage(_path)
-        )
-      ),
-    );
-
     return Row(
         children: [
-          photo,
+          Photo(path: path),
           userDetails
         ],
       );

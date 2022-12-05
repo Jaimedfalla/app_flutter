@@ -21,7 +21,10 @@ class MyApp extends StatelessWidget {
           children: [
             ListView(
               children: [
-                DescriptionPlace("Bahamas",4.0,"Aliquip ut rebum tempor diam ipsum justo ea et.No eos justo euismod sed no nonumy dolores labore facilisis nostrud ad ipsum elitr in amet exerci duo duis. Veniam tempor ipsum ut vulputate ex. Ipsum praesent est vel iusto eirmod ut labore consetetur eu dolore. Ut lorem dolor. Vero gubergren eirmod ea accusam gubergren justo gubergren."),
+                DescriptionPlace(
+                  namePlace:"Bahamas",
+                  stars:4.0,
+                  descriptionPlace:"Aliquip ut rebum tempor diam ipsum justo ea et.No eos justo euismod sed no nonumy dolores labore facilisis nostrud ad ipsum elitr in amet exerci duo duis. Veniam tempor ipsum ut vulputate ex. Ipsum praesent est vel iusto eirmod ut labore consetetur eu dolore. Ut lorem dolor. Vero gubergren eirmod ea accusam gubergren justo gubergren."),
                 ReviweList()
               ],
             ),

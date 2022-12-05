@@ -1,15 +1,16 @@
+import 'package:app_flutter/button_purple.dart';
 import 'package:flutter/material.dart';
 import 'rating.dart';
 
 class DescriptionPlace extends Rating {
 
-   final String _namePlace;
-   final String _descriptionPlace;
+   final String namePlace;
+   final String descriptionPlace;
 
-   DescriptionPlace(
-    this._namePlace,
-    _stars,
-    this._descriptionPlace):super(_stars);
+   DescriptionPlace({
+    required this.namePlace,
+    required stars,
+    required this.descriptionPlace}):super(stars: stars);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class DescriptionPlace extends Rating {
         left: 20.0
       ),
       child: Text(
-        _descriptionPlace,
+        descriptionPlace,
         style: const TextStyle(
           fontSize: 18.0,
           color: Color(0xFF56575a),
@@ -38,7 +39,7 @@ class DescriptionPlace extends Rating {
             left: 20.0,
             right: 20.0),
           child: Text(
-            _namePlace,
+            namePlace,
             style: const TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.w900,
@@ -54,9 +55,13 @@ class DescriptionPlace extends Rating {
     );
     
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children:<Widget>[
         titleStars,
-        description
+        description,
+        ButtonPurple(
+          thisbuttonText: "Navigate"
+        )
       ]);
   }
 }
