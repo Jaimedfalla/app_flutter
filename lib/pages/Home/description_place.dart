@@ -1,13 +1,13 @@
-import 'package:app_flutter/button_purple.dart';
 import 'package:flutter/material.dart';
-import 'rating.dart';
+import 'package:app_flutter/components/rating.dart';
+import 'package:app_flutter/pages/Home/button_purple.dart';
 
 class DescriptionPlace extends Rating {
 
    final String namePlace;
    final String descriptionPlace;
 
-   DescriptionPlace({
+   DescriptionPlace({super.key, 
     required this.namePlace,
     required stars,
     required this.descriptionPlace}):super(stars: stars);

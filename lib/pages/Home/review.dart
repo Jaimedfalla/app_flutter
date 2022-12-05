@@ -1,7 +1,6 @@
-import 'package:app_flutter/components/photo.dart';
 import 'package:flutter/material.dart';
-import 'rating.dart';
-
+import 'package:app_flutter/components/photo.dart';
+import 'package:app_flutter/components/rating.dart';
 
 class Review extends Rating{
 
@@ -20,9 +19,7 @@ class Review extends Rating{
   Widget build(BuildContext context) {
 
     final userComment = Container(
-      margin: const EdgeInsets.only(
-        left: 20.0
-      ),
+      margin: const EdgeInsets.all(20.0),
       child: Text(comment,
         textAlign: TextAlign.left,
         style: const TextStyle(
